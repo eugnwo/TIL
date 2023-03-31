@@ -98,3 +98,68 @@ class Idol {
 }
 ```
 
+* ``Structor`` 를 ``const`` , ``final`` 로 선언할 수 있다. (하지만, 값을 변경할 수 없다.)
+  * ``const`` 로 선언한 ``Structor`` 는 동일하다.
+
+* ``final`` 로 선언하지 않으면 ``const`` 를 사용할 수 없다.
+```Dart
+class Idol {
+  final String name;
+  final List<String> members = ['지수', '제니', '리사', '로제'];
+  
+  const Idol(String name, List<String> members);
+```
+
+* ``getter`` -> 데이터를 가져올 때 사용한다.
+* ``setter`` -> 데이터를 새로운 값으로 설정할 때 사용한다.
+
+```Dart
+void main(){
+  Idol blackPink = Idol(
+    '블랙핑크',
+    ['지수', '제니', '리사', '로제'],
+  );
+  
+  Idol bts = Idol.fromList(
+    [
+      ['RM', '진', '슈가', '제이홉', '지민', '뷔','정국'],
+      'BTS',
+    ]
+  );
+  
+  // getter 사용 출력
+  print(blackPink.firstMember);
+  print(bts.firstMember);
+  
+  // setter 사용
+  blackPink.firstMember = '코드팩토리';
+  bts.firstMember = '아이언맨';
+  
+  // setter 사용 출력
+  print(blackPink.firstMember);
+  print(bts.firstMember);
+}
+
+class Idol {
+  String name;
+  List<String> members = ['지수', '제니', '리사', '로제'];
+  
+  Idol(String name, List<String> members)
+      : this.name = name,
+        this.members = members;
+  
+  Idol.fromList(List values)
+      : this.members = values[0],
+        this.name = values[1];
+
+  // getter
+  String get firstMember{
+    return this.members[0];
+  }
+  
+  // setter
+  set firstMember(String name){
+    this.members[0] = name;
+  }
+}
+```
