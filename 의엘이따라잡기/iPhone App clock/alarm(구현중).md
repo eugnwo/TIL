@@ -9,41 +9,75 @@ class homescreen extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFF181818),
-          elevation: 0.0,
-          leading: TextButton(
-            onPressed: null,
-            child: Text('편집',
-              style: TextStyle(
-                color: Color (0xFFFF9A00),
-                fontSize: 20,
+            backgroundColor: Color(0xFF181818),
+            elevation: 0.0,
+            leading: TextButton(
+              onPressed: null,
+              child: Text(
+                '편집',
+                style: TextStyle(
+                  color: Color(0xFFFF9A00),
+                  fontSize: 20,
+                ),
               ),
             ),
-          ),
-          actions: [
-            IconButton(
+            actions: [
+              IconButton(
                 onPressed: null,
                 icon: Icon(
                   Icons.add,
                   color: Color(0xFFFF9A00),
                   size: 28,
                 ),
-            ),
-          ]
-        ),
+              ),
+            ]),
         backgroundColor: Color(0xFF181818),
         body: Column(
           children: [
             Container(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 21.0),
-                child: Text('알람',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 38,
-                    fontWeight: FontWeight.w600,
-                  ),
+              margin: EdgeInsets.only(right: 20.0),
+              child: Text(
+                '알람',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 38,
+                  fontWeight: FontWeight.w600,
                 ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 20.0),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 25),
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.bed,
+                      color: Colors.white,
+                    ),
+                    Text(
+                      '수면 | 기상',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 23,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(right: 40.0),              child: Column(
+                children: [
+                  Text('기타',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 23,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  )
+                ],
               ),
             ),
           ],
@@ -52,4 +86,5 @@ class homescreen extends StatelessWidget {
     );
   }
 }
+
 ```
