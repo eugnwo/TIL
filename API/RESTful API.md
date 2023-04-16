@@ -29,4 +29,11 @@
     * 클라이언트는 서버에서 자바 애플릿, 자바 스크립트 실행 코드를 전송 받아 기능을 일시적으로 확장할 수 있다.
     * 이 제약 조건은 필수 조건이 아님.
   * ``Uniform Interface``
-    * 
+    * ``URL`` 로 지정된 리소스에 균일하고 통일된 인터페이스를 제공한다. 아키텍쳐를 단순하게 분리하여 독립적으로 만들 수 있다.
+    * ``HTTP`` 표준만 맞는다면, 어떤 기술도 가능한 ``Interface`` 스타일을 나타낼 수 있다.
+      * ``REST API`` 정의를 ``HTTP + JSON`` 으로 하였다면 ``C``, ``Java``, ``Python`` 등 특정 언어나 기술에 종속받지 않고, 모든 플랫폼에 사용이 가능한 ``Loosely Coupling`` 구조를 가진다.
+    * ``Uniform Interface`` 는 다른 제약 사항과 달리 세부 원칙을 가지고 있다.
+      * Resource Identification In Requests
+      * Resource Manipulation Through Representations
+      * Self-Descriptive Messages
+      * HATEOAS(Hypermedia As The Engine Of Application State)
